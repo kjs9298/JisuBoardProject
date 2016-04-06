@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="ibatis-common-2">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Downloads/ibatis-common-2.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/ibatis-dao-2.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/ibatis-sqlmap-2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
