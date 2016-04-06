@@ -7,4 +7,7 @@
     <select id="getArticleList" resultClass="board">
         select * from Board order by idx desc
     </select>
+    <select id="getArticle" parameterClass="int" resultClass="board">
+        select * from Board where idx = #value#
+    </select>
 </sqlMap>
