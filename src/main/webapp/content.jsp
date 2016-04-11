@@ -10,6 +10,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
+    <script>
+        function onDownload(idx){
+            var o = document.getElementById("ifrm_filedown");
+            o.src = "download.do?idx=" + idx;
+        }
+    </script>
+
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>게시판 조회</title>
 </head>
@@ -37,8 +44,15 @@
         <th colspan="2">내용</th>
         <td colspan="6">${article.content}</td>
     </tr>
+    <tr>
+        <th colspan="2">파일</th>
+        <td colspan="8">
+            <a href="#" onclick="onDownload(${article.idx})">${article.filename}</a>
+        </td>
+    </tr>
 </table>
 <a href="delete.do?idx=${article.idx}">게시글 삭제</a>
 <a href="list.do">목록으로</a>
+<iframe id = "ifrm_filedown" style = "position:absolute; z-index: 1; visibility: hidden;"></iframe>
 </body>
 </html>

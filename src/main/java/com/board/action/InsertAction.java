@@ -3,6 +3,8 @@ package com.board.action;
 import com.board.beans.Board;
 import com.board.controller.CommandAction;
 import com.board.dao.BoardDao;
+import com.oreilly.servlet.MultipartRequest;
+import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,10 +18,22 @@ public class InsertAction implements CommandAction {
 
 		request.setCharacterEncoding("UTF-8");
 
-		String title = request.getParameter("title");
-		String writer = request.getParameter("writer");
+		MultipartRequest multi = null;
+
+		int sizeLimit = 10 * 1024 * 1024;
+		String savePath = request.getRealPath("/upload");
+
+		try{
+			multi = new MultipartRequest(request, savePath, sizeLimit, "utf-8", new DefaultFileRenamePolicy());
+		} catch (Exception e){
+			e.printStackTrace();
+		}
+
+		String filename = multi.getFilesystemName("filename");
+		String title = multi.getParameter("title");
+		String writer = multi.getParameter("writer");
 		int count = 0;
-		String content = request.getParameter("content");
+		String content = multi.getParameter("content");
 		String regip = request.getRemoteAddr();
 
 		if(title == "" ||title == null) System.out.println("title이 null입니다.");
@@ -37,6 +51,7 @@ public class InsertAction implements CommandAction {
 		article.setWriter(writer);
 		article.setContent(content);
 		article.setCount(count);
+		article.setFilename(filename);
 		BoardDao.getInstance().insertArticle(article);
 
 		return "insert.jsp";

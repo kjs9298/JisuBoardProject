@@ -24,13 +24,14 @@ public class BoardDao extends CommonDao {
 		return (Board)GetDB().queryForObject("getTestArticle", idx);
 	}
 	public void insertArticle(Board article) throws SQLException {
-		/*System.out.println("@@@@@@");
+		System.out.println("@@@@@@");
 		System.out.println(article.getRegip());
 		System.out.println(article.getTitle());
 		System.out.println(article.getWriter());
 		System.out.println(article.getContent());
 		System.out.println(article.getCount());
-		System.out.println("@@@@@");*/
+		System.out.println(article.getFilename());
+		System.out.println("@@@@@");
 		GetDB().insert("insertArticle", article);
 	}
 

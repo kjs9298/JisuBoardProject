@@ -1,7 +1,7 @@
 <component name="libraryTable">
-  <library name="ibatis-common-2">
+  <library name="ibatis-sqlmap-2">
     <CLASSES>
-      <root url="jar://$USER_HOME$/libs/maven/ibatis-common-2.jar!/" />
+      <root url="jar://$USER_HOME$/libs/maven/ibatis-sqlmap-2.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

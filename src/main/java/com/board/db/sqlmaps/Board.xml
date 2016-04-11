@@ -11,8 +11,8 @@
         SELECT * FROM board WHERE idx = #value#
     </select>
     <insert id="insertArticle" parameterClass="board">
-        INSERT INTO board (title, writer, regdate, count, content, regip)
-        VALUES (#title#, #writer#, curdate(), #count#, #content#, #regip# )
+        INSERT INTO board (title, writer, regdate, count, content, regip, filename)
+        VALUES (#title#, #writer#, curdate(), #count#, #content#, #regip#, #filename# )
     </insert>
     <delete id="deleteArticle" parameterClass="int" >
         DELETE FROM board WHERE idx = #value#

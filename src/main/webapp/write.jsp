@@ -9,11 +9,12 @@
     <title>게시글 쓰기</title>
 </head>
 <body>
-    <form action="insert.do" method="post" onsubmit="return formCheck();">
+    <form action="insert.do" method="post" enctype="multipart/form-data" onsubmit="return formCheck();">
         제목 : <input type="text" name="title" /> <br/>
         작성자 : <input type="text" name="writer" /><br/>
         날짜 : <input type="text" name="regdate" /><br/>
-        내용 : <input type="text" name="content" /><br/>
+        내용 : <textarea rows="10" cols="20" name="content"></textarea><br/>
+        파일 : <input type="file" name="filename" /><br/>
         <input type="submit" />
     </form>
 
