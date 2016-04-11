@@ -22,6 +22,8 @@
         <td>${article.idx}</td>
         <th>작성자</th>
         <td>${article.writer}</td>
+        <th>IP</th>
+        <td>${article.regip}</td>
         <th>등록날짜</th>
         <td>${article.regdate}</td>
         <th>조회수</th>

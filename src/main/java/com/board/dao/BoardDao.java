@@ -38,4 +38,11 @@ public class BoardDao extends CommonDao {
 		//System.out.println("### delete action idx : " + idx);
 		GetDB().delete("deleteArticle", idx);
 	}
+
+	public void setArticleCount(Board article) throws SQLException {
+	/*	System.out.println("### update start " );
+		System.out.println("### idx : " +article.getIdx());
+		System.out.println("### count : " +article.getCount());
+	*/	GetDB().update("setArticleCount", article);
+	}
 }

@@ -11,10 +11,13 @@
         SELECT * FROM board WHERE idx = #value#
     </select>
     <insert id="insertArticle" parameterClass="board">
-        INSERT INTO board (title, writer, regdate, count, content)
-        VALUES (#title#, #writer#, curdate(), #count#, #content#);
+        INSERT INTO board (title, writer, regdate, count, content, regip)
+        VALUES (#title#, #writer#, curdate(), #count#, #content#, #regip# )
     </insert>
     <delete id="deleteArticle" parameterClass="int" >
-        DELETE FROM board WHERE idx = #value#;
+        DELETE FROM board WHERE idx = #value#
     </delete>
+    <update id="setArticleCount" parameterClass="board">
+        UPDATE board SET count = #count# WHERE idx = #idx#
+    </update>
 </sqlMap>
