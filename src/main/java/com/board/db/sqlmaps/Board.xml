@@ -5,9 +5,16 @@
     <typeAlias alias="int" type="java.lang.Integer" />
     <typeAlias alias="board" type="com.board.beans.Board" />
     <select id="getArticleList" resultClass="board">
-        select * from Board order by idx desc
+        SELECT * FROM board ORDER BY idx DESC
     </select>
-    <select id="getArticle" parameterClass="int" resultClass="board">
-        select * from Board where idx = #value#
+    <select id="getTestArticle" parameterClass="int" resultClass="board">
+        SELECT * FROM board WHERE idx = #value#
     </select>
+    <insert id="insertArticle" parameterClass="board">
+        INSERT INTO board (title, writer, regdate, count, content)
+        VALUES (#title#, #writer#, curdate(), #count#, #content#);
+    </insert>
+    <delete id="deleteArticle" parameterClass="int" >
+        DELETE FROM board WHERE idx = #value#;
+    </delete>
 </sqlMap>

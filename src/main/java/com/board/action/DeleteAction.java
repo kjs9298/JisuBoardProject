@@ -1,6 +1,5 @@
 package com.board.action;
 
-import com.board.beans.Board;
 import com.board.controller.CommandAction;
 import com.board.dao.BoardDao;
 
@@ -10,14 +9,15 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Created by jisukim on 2016. 4. 7..
  */
-public class ContentAction implements CommandAction {
+public class DeleteAction implements CommandAction {
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
+		int idx = 0;
+		if(request.getParameter("idx") != null){
+			idx = Integer.parseInt(request.getParameter("idx"));
+		}
 
-		String idx = request.getParameter("idx");
+		BoardDao.getInstance().deleteArticle(idx);
 
-		Board article = BoardDao.getInstance().getTestArticle(Integer.parseInt(idx));
-		request.setAttribute("article", article);
-
-		return "content.jsp";
+		return "delete.jsp";
 	}
 }

@@ -20,10 +20,22 @@ public class BoardDao extends CommonDao {
 		return  (ArrayList<Board>)GetDB().queryForList("getArticleList", null, page, 10);
 	}
 
-	public Board getArticle(int idx) throws SQLException {
-		return (Board)GetDB().queryForObject("getArticle", idx);
+	public Board getTestArticle(int idx) throws SQLException {
+		return (Board)GetDB().queryForObject("getTestArticle", idx);
 	}
-	/*public void insertArticle(Board article) throws SQLException {
+	public void insertArticle(Board article) throws SQLException {
+		/*System.out.println("@@@@@@");
+		System.out.println(article.getRegip());
+		System.out.println(article.getTitle());
+		System.out.println(article.getWriter());
+		System.out.println(article.getContent());
+		System.out.println(article.getCount());
+		System.out.println("@@@@@");*/
 		GetDB().insert("insertArticle", article);
-	}*/
+	}
+
+	public void deleteArticle(int idx) throws SQLException {
+		//System.out.println("### delete action idx : " + idx);
+		GetDB().delete("deleteArticle", idx);
+	}
 }

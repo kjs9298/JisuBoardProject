@@ -14,7 +14,7 @@ import java.util.regex.Pattern;
 public class InsertAction implements CommandAction {
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 
-		/*request.setCharacterEncoding("UTF-8");
+		request.setCharacterEncoding("UTF-8");
 
 		String title = request.getParameter("title");
 		String writer = request.getParameter("writer");
@@ -37,7 +37,7 @@ public class InsertAction implements CommandAction {
 		article.setWriter(writer);
 		article.setContent(content);
 		article.setCount(count);
-		BoardDao.getInstance().insertArticle(article);*/
+		BoardDao.getInstance().insertArticle(article);
 
 		return "insert.jsp";
 	}
