@@ -15,7 +15,7 @@
     <title>Title</title>
 </head>
 <script>
-   // location.href="list.do";
+   location.href="list.do";
 </script>
 <body>
 </body>

@@ -11,7 +11,7 @@
     <title>리다이렉트 페이지</title>
 </head>
 <script>
-    location.href="list.jsp";
+    location.href="list.do";
 </script>
 
 <body>

@@ -16,7 +16,7 @@
 
 <body>
 <h1>게시판 조회입니당~~</h1>
-<%--<table>
+<table>
     <tr>
         <th>번호</th>
         <td>${article.idx}</td>
@@ -35,8 +35,8 @@
         <th colspan="2">내용</th>
         <td colspan="6">${article.content}</td>
     </tr>
-</table>--%>
-<a href="delete.jsp?idx=${article.idx}">게시글 삭제</a>
-<a href="index.jsp">목록으로</a>
+</table>
+<a href="delete.do?idx=${article.idx}">게시글 삭제</a>
+<a href="list.do">목록으로</a>
 </body>
 </html>
