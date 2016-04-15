@@ -11,10 +11,17 @@
     <title>리다이렉트 페이지</title>
 </head>
 <script>
-    location.href="${url}";
+    $.ajax({
+        type:'post',
+        url:'${url}',
+        success:function(data){
+            $('#content').html(data);
+        }
+    });
 </script>
 
 <body>
 
+<div id="content"></div>
 </body>
 </html>

@@ -52,7 +52,7 @@
     </tr>
 </table>
 <a href="delete.do?idx=${article.idx}">게시글 삭제</a>
-<a href="list.do">목록으로</a>
+<a href="#" onclick="closeContent()">목록으로</a>
 <iframe id = "ifrm_filedown" style = "position:absolute; z-index: 1; visibility: hidden;"></iframe>
 </body>
 </html>
