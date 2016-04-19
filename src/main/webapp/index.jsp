@@ -11,8 +11,9 @@
     <title>index염</title>
 </head>
 <body>
+hello spring!
 <script>
-    location.href="list.do";
+  //  location.href="list.do";
 </script>
 </body>
 </html>
