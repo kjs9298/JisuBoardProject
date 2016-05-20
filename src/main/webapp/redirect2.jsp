@@ -1,16 +1,10 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: jisukim
-  Date: 2016. 4. 11.
-  Time: 오후 10:43
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<html>
-<head>
-    <title>리다이렉트 페이지</title>
-</head>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script>
+
 <script>
+
     $.ajax({
         type:'post',
         url:'${url}',
@@ -18,10 +12,8 @@
             $('#content').html(data);
         }
     });
+
+
 </script>
-
-<body>
-
-<div id="content"></div>
-</body>
-</html>
+<div id="content">
+</div>
