@@ -1,8 +1,11 @@
 package com.board.beans;
 
+import org.springframework.stereotype.Component;
+
 /**
  * Created by jisukim on 2016. 4. 4..
  */
+@Component
 public class Board {
 	private int idx;
 	private String title;
